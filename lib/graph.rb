@@ -32,6 +32,13 @@ class Graph
     self
   end
 
+  def edges(u, *vs)
+    vs.each do |v|
+      self.edge(u, v)
+    end
+    self
+  end
+
   def vertices
     @vertices.values
   end

@@ -31,9 +31,3 @@ def dfs_visit(g, v, &visitor)
   visitor.call(v) if visitor and visitor.arity == 1
 end
 
-def topological_sort(g)
-  res = []
-  dfs(g) { |v| res << v }
-  res
-end
-

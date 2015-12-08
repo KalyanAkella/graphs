@@ -7,7 +7,7 @@ module Color
   GRAY = 2
 end
 
-Vertex = Struct.new(:label, :color, :parent, :d, :f)
+Vertex = Struct.new(:label, :color, :parent, :d, :f, :data)
 
 class Graph
 

@@ -32,5 +32,16 @@ describe Graph do
     v.parent = u
     expect(@graph.ancestral_path(z)).to eq([u,v,w,x,y,z])
   end
+
+  it "should return the transpose graph" do
+    tgraph = @graph.transpose
+    u, v, w, x, y, z = tgraph.vertices
+    expect(tgraph.adjacent_vertices(u)).to be_empty
+    expect(tgraph.adjacent_vertices(v)).to contain_exactly(u, x)
+    expect(tgraph.adjacent_vertices(w)).to be_empty
+    expect(tgraph.adjacent_vertices(x)).to contain_exactly(u, y)
+    expect(tgraph.adjacent_vertices(y)).to contain_exactly(v, w)
+    expect(tgraph.adjacent_vertices(z)).to contain_exactly(w, z)
+  end
 end
 

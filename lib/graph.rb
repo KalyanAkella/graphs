@@ -32,6 +32,16 @@ class Graph
     self
   end
 
+  def transpose
+    tgraph = Graph.new(self.vertices)
+    self.vertices.each do |vertex|
+      @adj[vertex.label].each do |av|
+        tgraph.edge(av, vertex)
+      end
+    end
+    tgraph
+  end
+
   def edges(u, *vs)
     vs.each do |v|
       self.edge(u, v)

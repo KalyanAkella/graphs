@@ -21,7 +21,7 @@ describe 'depth first search on a graph' do
   end
 
   it "should set parents correctly" do
-    u, v, w, x, y, z = @graph.vertices
+    u, v, w, x, y, z = @graph.vertices(false)
     expect(@graph.ancestral_path(u)).to eq([u])
     expect(@graph.ancestral_path(v)).to eq([u, v])
     expect(@graph.ancestral_path(x)).to eq([u, v, y, x])

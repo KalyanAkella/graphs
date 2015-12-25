@@ -49,7 +49,8 @@ class Graph
     self
   end
 
-  def vertices
+  def vertices(sorted = true)
+    return @vertices.values.sort { |v1, v2| v2.f <=> v1.f } if sorted
     @vertices.values
   end
 

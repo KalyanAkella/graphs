@@ -19,7 +19,7 @@ def dfs_count(g, u, v)
     dfs_count(g, av, v)
     if av.label == v.label
       v.data += 1
-      p "Found #{g.ancestral_path(v).map(&:label).join}"
+      #      p "Found #{g.ancestral_path(v).map(&:label).join}"
     end
   end
 end
